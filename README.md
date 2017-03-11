@@ -3,8 +3,6 @@
   ⚡️ A Toy Complex Number Library in Javascript ⚡️
 </p>
 
----------
-
 ### Features
 
 * Complex Numbers!!!i!!!i!!!i!!!!
