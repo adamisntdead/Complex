@@ -46,3 +46,27 @@ All methods require a complex object to be used, and the library includes the fo
 * `equals(x)`
 
 The methods can be used on the `complex` object like `Complex(3, 2).abs()` or as static methods, `Complex.abs(Complex(3, 2))`
+
+### Tests
+Even though this is a toy library, its all tested! (Cause thats whats good)
+
+Heres the results of the tests and the coverage:
+
+```
+ PASS  tests/signum.test.js
+ PASS  tests/index.test.js
+```
+
+File       |  % Stmts | % Branch |  % Funcs |  % Lines |Uncovered Lines |
+-----------|----------|----------|----------|----------|----------------|
+All files  |      100 |    94.44 |      100 |      100 |                |
+ index.js  |      100 |      100 |      100 |      100 |                |
+ signum.js |      100 |    83.33 |      100 |      100 |                |
+
+```
+Test Suites: 2 passed, 2 total
+Tests:       10 passed, 10 total
+Snapshots:   0 total
+Time:        1.362s
+Ran all test suites matching "tests".
+```

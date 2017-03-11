@@ -83,4 +83,6 @@ test('ToString', () => {
   expect(Complex(-123, 212).toString()).toBe('-123 + 212i')
 
   expect(Complex.toString(Complex(-123, -212))).toBe('-123 - 212i')
+  expect(Complex.toString(Complex(-123, 212))).toBe('-123 + 212i')
+  expect(Complex.toString(Complex(0, 212))).toBe('212i')
 })
