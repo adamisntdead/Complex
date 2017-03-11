@@ -1,4 +1,4 @@
-<h1 align="center">Complex</h1>
+<h1 align="center">Imagine</h1>
 <p align="center">
   ⚡️ A Toy Complex Number Library in Javascript ⚡️
 </p>
@@ -14,7 +14,7 @@
 
 ### Usage
 ```Javascript
-const complex = require('./local-path-to-complex/lib/index');
+const complex = require('imaginejs');
 
 // Make a new Complex number, 4 + 2i
 const num = complex(4, 2)
@@ -29,7 +29,7 @@ newNum.equals(num) // False
 console.log(newNum.abs().toString) // "10 + 5i"
 
 // Do a random sum
-Complex.multiply(Complex(21, 4), Complex(76, 2)) // returns 1588 + 346i
+complex.multiply(Complex(21, 4), Complex(76, 2)) // returns 1588 + 346i
 ```
 
 All methods require a complex object to be used, and the library includes the following methods:
