@@ -2,30 +2,30 @@ const sgn = require('./signum')
 
 // Given as a + bi
 class Complex {
-  constructor(a, b) {
+  constructor (a, b) {
     this.Re = a
     this.Im = b
   }
 
   // Absolute Value, sqrt(a^2 + b^2)
-  abs() {
+  abs () {
     return Math.sqrt(Math.pow(this.Re, 2) + Math.pow(this.Im, 2))
   }
 
   // Conjugate, The complex conjugate of x + yi is defined to be x − yi.
-  conj() {
+  conj () {
     return new Complex(this.Re, -this.Im)
   }
 
-  add(x) {
+  add (x) {
     return new Complex(this.Re + x.Re, this.Im + x.Im)
   }
 
-  subtract(x) {
+  subtract (x) {
     return new Complex(this.Re - x.Re, this.Im - x.Im)
   }
 
-  multiply(x) {
+  multiply (x) {
     // (a + bi)(c + di) = (ac - bd) + (bc+  ad)i
     return new Complex(
       (this.Re * x.Re) - (this.Im * x.Im),
@@ -33,14 +33,14 @@ class Complex {
     )
   }
 
-  divide(x) {
+  divide (x) {
     return new Complex(
-      (((this.Re * x.Re) + (this.Im * x.Im)) /(Math.pow(x.Re, 2) + Math.pow(x.Im, 2))),
+      (((this.Re * x.Re) + (this.Im * x.Im)) / (Math.pow(x.Re, 2) + Math.pow(x.Im, 2))),
       (((this.Im * x.Re) - (this.Re * x.Im)) / (Math.pow(x.Re, 2) + Math.pow(x.Im, 2)))
     )
   }
 
-  sqrt() {
+  sqrt () {
     const re = Math.sqrt(
       (this.Re + (Math.sqrt(Math.pow(this.Re, 2) + Math.pow(this.Im, 2)))) / 2
     )
@@ -53,12 +53,12 @@ class Complex {
   }
 
   // Test Equality with other Complex Numbers
-  equals(x) {
+  equals (x) {
     return this.Re === x.Re && this.Im === x.Im
   }
 
   // To String Method
-  toString() {
+  toString () {
     if (this.Re === 0) {
       return `${this.Im}i`
     }
@@ -71,3 +71,46 @@ class Complex {
 }
 
 module.exports = (a, b) => new Complex(a, b)
+
+module.exports.abs = (x) => Math.sqrt(Math.pow(x.Re, 2) + Math.pow(x.Im, 2))
+
+module.exports.conj = (x) => new Complex(x.Re, -x.Im)
+
+module.exports.add = (a, b) => new Complex(a.Re + b.Re, a.Im + b.Im)
+
+module.exports.subtract = (a, b) => new Complex(a.Re - b.Re, a.Im - b.Im)
+
+module.exports.multiply = (a, b) => new Complex(
+  (a.Re * b.Re) - (a.Im * b.Im),
+  (a.Im * b.Re) + (a.Re * b.Im)
+)
+
+module.exports.divide = (a, b) => new Complex(
+  (((a.Re * b.Re) + (a.Im * b.Im)) / (Math.pow(b.Re, 2) + Math.pow(b.Im, 2))),
+  (((a.Im * b.Re) - (a.Re * b.Im)) / (Math.pow(b.Re, 2) + Math.pow(b.Im, 2)))
+)
+
+module.exports.sqrt = (x) => {
+  const re = Math.sqrt(
+    (x.Re + (Math.sqrt(Math.pow(x.Re, 2) + Math.pow(x.Im, 2)))) / 2
+  )
+
+  const im = sgn(x.Im) * Math.sqrt(
+    (0 - x.Re + (Math.sqrt(Math.pow(x.Re, 2) + Math.pow(x.Im, 2)))) / 2
+  )
+
+  return new Complex(re, im)
+}
+
+module.exports.equals = (a, b) => a.Re === b.Re && a.Im === b.Im
+
+module.exports.toString = (x) => {
+  if (x.Re === 0) {
+    return `${x.Im}i`
+  }
+  if (x.Im >= 0) {
+    return `${x.Re} + ${x.Im}i`
+  } else {
+    return `${x.Re} - ${Math.abs(x.Im)}i`
+  }
+}

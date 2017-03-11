@@ -29,6 +29,9 @@ newNum.equals(num) // False
 
 // find the absolute value and print
 console.log(newNum.abs().toString) // "10 + 5i"
+
+// Do a random sum
+Complex.multiply(Complex(21, 4), Complex(76, 2)) // returns 1588 + 346i
 ```
 
 All methods require a complex object to be used, and the library includes the following methods:
@@ -41,3 +44,5 @@ All methods require a complex object to be used, and the library includes the fo
 * `sqrt()`
 * `toString`
 * `equals(x)`
+
+The methods can be used on the `complex` object like `Complex(3, 2).abs()` or as static methods, `Complex.abs(Complex(3, 2))`
