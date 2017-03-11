@@ -6,7 +6,8 @@
   "scripts": {
     "test": "standard \"src/*.js\" \"test/*.js\" && jest tests",
     "build": "babel src -d lib",
-    "coverage": "jest tests --coverage"
+    "coverage": "jest tests --coverage",
+    "clean": "rm -r -f coverage"
   },
   "repository": {
     "type": "git",
