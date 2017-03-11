@@ -4,7 +4,7 @@
   "description": "A Toy Complex Number Library in Javascript",
   "main": "lib/index.js",
   "scripts": {
-    "test": "jest tests",
+    "test": "standard \"src/*.js\" \"test/*.js\" && jest tests",
     "build": "babel src -d lib"
   },
   "repository": {
@@ -22,6 +22,7 @@
     "babel-jest": "^19.0.0",
     "babel-preset-env": "^1.2.1",
     "jest": "^19.0.2",
-    "regenerator-runtime": "^0.10.3"
+    "regenerator-runtime": "^0.10.3",
+    "standard": "^9.0.1"
   }
 }
