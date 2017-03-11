@@ -1,4 +1,4 @@
-const sgn = (x) => {
+export default (x) => {
   if (x < 0) {
     return -1
   } else if (x === 0) {
@@ -7,5 +7,3 @@ const sgn = (x) => {
     return 1
   }
 }
-
-module.exports = sgn

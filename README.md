@@ -14,7 +14,7 @@
 
 ### Usage
 ```Javascript
-const complex = require('./local-path-to-complex/lib/index');
+import complex, * as Complex from ./local-path-to-complex/lib/index'
 
 // Make a new Complex number, 4 + 2i
 const num = complex(4, 2)
@@ -28,7 +28,7 @@ newNum.equals(num) // False
 // find the absolute value and print
 console.log(newNum.abs().toString) // "10 + 5i"
 
-// Do a random sum
+// Do a random sum using the static methods
 Complex.multiply(Complex(21, 4), Complex(76, 2)) // returns 1588 + 346i
 ```
 

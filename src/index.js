@@ -1,4 +1,4 @@
-const sgn = require('./signum')
+import sgn from './signum'
 
 // Given as a + bi
 class Complex {
@@ -70,27 +70,27 @@ class Complex {
   }
 }
 
-module.exports = (a, b) => new Complex(a, b)
+export default (a, b) => new Complex(a, b)
 
-module.exports.abs = (x) => Math.sqrt(Math.pow(x.Re, 2) + Math.pow(x.Im, 2))
+export const abs = (x) => Math.sqrt(Math.pow(x.Re, 2) + Math.pow(x.Im, 2))
 
-module.exports.conj = (x) => new Complex(x.Re, -x.Im)
+export const conj = (x) => new Complex(x.Re, -x.Im)
 
-module.exports.add = (a, b) => new Complex(a.Re + b.Re, a.Im + b.Im)
+export const add = (a, b) => new Complex(a.Re + b.Re, a.Im + b.Im)
 
-module.exports.subtract = (a, b) => new Complex(a.Re - b.Re, a.Im - b.Im)
+export const subtract = (a, b) => new Complex(a.Re - b.Re, a.Im - b.Im)
 
-module.exports.multiply = (a, b) => new Complex(
+export const multiply = (a, b) => new Complex(
   (a.Re * b.Re) - (a.Im * b.Im),
   (a.Im * b.Re) + (a.Re * b.Im)
 )
 
-module.exports.divide = (a, b) => new Complex(
+export const divide = (a, b) => new Complex(
   (((a.Re * b.Re) + (a.Im * b.Im)) / (Math.pow(b.Re, 2) + Math.pow(b.Im, 2))),
   (((a.Im * b.Re) - (a.Re * b.Im)) / (Math.pow(b.Re, 2) + Math.pow(b.Im, 2)))
 )
 
-module.exports.sqrt = (x) => {
+export const sqrt = (x) => {
   const re = Math.sqrt(
     (x.Re + (Math.sqrt(Math.pow(x.Re, 2) + Math.pow(x.Im, 2)))) / 2
   )
@@ -102,9 +102,9 @@ module.exports.sqrt = (x) => {
   return new Complex(re, im)
 }
 
-module.exports.equals = (a, b) => a.Re === b.Re && a.Im === b.Im
+export const equals = (a, b) => a.Re === b.Re && a.Im === b.Im
 
-module.exports.toString = (x) => {
+export const toString = (x) => {
   if (x.Re === 0) {
     return `${x.Im}i`
   }
