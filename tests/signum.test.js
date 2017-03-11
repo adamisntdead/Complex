@@ -1,6 +1,6 @@
 /* global test, expect */
 
-import sig from '../src/signum'
+const sig = require('../src/signum')
 
 test('Signum Function', () => {
   expect(sig(-34)).toBe(-1)
