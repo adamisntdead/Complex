@@ -3,6 +3,12 @@
   ⚡️ A Toy Complex Number Library in Javascript ⚡️
 </p>
 
+> [![GitHub issues](https://img.shields.io/github/issues/adamisntdead/Imagine.svg)](https://github.com/adamisntdead/Imagine/issues) 
+[![Travis](https://img.shields.io/travis/adamisntdead/Imagine.svg)](https://travis-ci.org/adamisntdead/Imagine)
+[![npm](https://img.shields.io/npm/v/imaginejs.svg)](https://www.npmjs.com/package/imaginejs)
+![](https://img.shields.io/badge/Code%20Style-Standard-lightgrey.svg)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/9957af7d170e405bb25a1f7615d13074)](https://www.codacy.com/app/adamisntdead/Imagine?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=adamisntdead/Imagine&amp;utm_campaign=Badge_Grade)
+
 ### Features
 
 * Complex Numbers!!!i!!!i!!!i!!!!
