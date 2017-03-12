@@ -19,6 +19,13 @@
 * A lovely formatted `toString()` method
 
 ### Usage
+Install it first:
+
+```bash
+$ npm install --save imaginejs
+```
+Now you can use the library
+
 ```Javascript
 const complex = require('imaginejs');
 
